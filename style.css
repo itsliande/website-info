@@ -1,0 +1,149 @@
+
+/* Global styles */
+:root {
+  --bg-color: #f5f5f5;
+  --main-bg: white;
+  --text-color: #333;
+  --heading-color: #444;
+  --paragraph-color: #666;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --main-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --heading-color: #f0f0f0;
+    --paragraph-color: #cccccc;
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+}
+
+nav {
+  margin-bottom: 20px;
+  background-color: var(--main-bg);
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.badge {
+    background-color: #ff80c0;
+    border-radius: 12px;
+    padding: 7px 14px;
+    font-size: 14px;
+    color: white;
+    margin-left: 0px; 
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.badge:hover {
+  background-color: #ff80ff; 
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--main-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+h1 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: var(--heading-color);
+}
+
+p {
+  color: var(--paragraph-color);
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+/* Button styles */
+button {
+  background-color: #ff80c0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff80ff;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+}
+
+footer a {
+  color: var(--text-color);
+  text-decoration: none
+}
+
+
+footer a:hover {
+  text-decoration: underline;
+  color: #ff80ff
+}
+
+footer a:not(:last-child)::after {
+  content: " | ";
+}
+
+/* Image styles */
+img {
+  border-radius: 4px;
+}
