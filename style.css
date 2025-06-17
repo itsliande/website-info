@@ -114,6 +114,20 @@ nav a:hover {
     border-color: var(--accent-color);
 }
 
+/* Aktive Seite in Navigation */
+nav a.active {
+    background: var(--accent-gradient);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    border-color: var(--accent-color);
+}
+
+nav a.active:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
 .badge {
     background: var(--accent-gradient);
     padding: 0.4rem 0.8rem;
