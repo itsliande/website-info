@@ -4,31 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Moderne Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="pages/tables.html"><span class="badge">Tables Projekt</span></a></li>
-            <li><a href="pages/hobbies.html">Hobbies</a></li>
-            <li><a href="pages/schule.html">Schule</a></li>
-            <li><a href="pages/lebenslauf.html">Lebenslauf</a></li>
-            <li><a href="pages/berufswunsch.html">Berufswunsch</a></li>
-        </ul>
-    </nav>
+    <div class="background-gradient"></div>
+
+    <header class="glass-card header">
+        <nav class="nav">
+            <div class="logo">
+                <h1>ModernSite</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <img src="src/img/Welcome.png" class="welcome-image">
-        <h1>Willkommen auf der Hauptseite</h1>
-        <p>Dies ist die Startseite meiner Website wenn sie ein bisschen was erfahren wollen gucken sie sich gerne um
-        </p>
+        <section id="home" class="hero">
+            <div class="glass-card hero-content">
+                <h2>Willkommen in der Zukunft</h2>
+                <p>Moderne Webentwicklung mit Glasmorphismus-Design</p>
+                <button class="glass-button">Mehr erfahren</button>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="glass-card">
+                <h3>Über uns</h3>
+                <p>Wir erstellen moderne, innovative Websites mit neuesten Design-Trends.</p>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="services-grid">
+                <div class="glass-card service-item">
+                    <h4>Webdesign</h4>
+                    <p>Moderne und responsive Designs</p>
+                </div>
+                <div class="glass-card service-item">
+                    <h4>Development</h4>
+                    <p>Hochperformante Webanwendungen</p>
+                </div>
+                <div class="glass-card service-item">
+                    <h4>UX/UI</h4>
+                    <p>Benutzerfreundliche Interfaces</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <a href="pages/Impressum.html">Impressum</a>
-        <a href="pages/PrivacyPolicy.html">Privacy Policy</a>
+    <footer class="glass-card footer">
+        <p>&copy; 2024 ModernSite. Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 
