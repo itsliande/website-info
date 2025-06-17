@@ -380,10 +380,22 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav {
+        padding: 0.5rem 0;
+    }
+    
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        border-radius: 8px;
     }
     
     h1 {
@@ -417,6 +429,21 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+    nav {
+        padding: 0.3rem 0;
+    }
+    
+    nav ul {
+        gap: 0.3rem;
+        padding: 0 0.3rem;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
     h1 {
         font-size: 2rem;
     }
@@ -433,33 +460,72 @@ footer a:hover {
         padding: 10px 12px;
         font-size: 0.9rem;
     }
+    
+    .timeline-item {
+        padding: 1.5rem;
+    }
 }
 
-/* Utility-Klassen */
-.text-center {
+/* Lebenslauf spezifische Styles */
+.cv-header {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
-.text-gradient {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    border: 1px solid var(--glass-border);
+.cv-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    border: 3px solid var(--accent-color);
     box-shadow: var(--glass-shadow);
-    padding: 1.5rem;
-    margin: 1rem 0;
-    transition: all 0.3s ease;
 }
 
-.glass-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--glass-hover-shadow);
-    background: rgba(40, 40, 40, 0.9);
+.cv-section {
+    margin: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.skill-item {
+    background: var(--glass-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+}
+
+.skill-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--accent-gradient);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
 }

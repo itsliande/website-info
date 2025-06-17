@@ -10,7 +10,7 @@
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="tables.html">Tables Projekt</a></li>
+            <li><a href="tables.html">Tables</a></li>
             <li><a href="hobbies.html">Hobbies</a></li>
             <li><a href="schule.html">Schule</a></li>
             <li><a href="berufswunsch.html">Berufswunsch</a></li>
@@ -18,57 +18,180 @@
     </nav>
     
     <main>
-        <div class="content-container">
-            <h1>Mein Lebenslauf</h1>
-            <p>Übersicht über meinen beruflichen und schulischen Werdegang.</p>
+        <!-- Header Sektion -->
+        <div class="content-container cv-header">
+            <div style="width: 120px; height: 120px; background: var(--accent-gradient); border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: white;">BW</div>
+            <h1>Björn Wassen</h1>
+            <p style="font-size: 1.3rem; color: var(--accent-color); margin-bottom: 2rem;">Angehender Fachinformatiker für Anwendungsentwicklung</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>bjoern@wassen-mail.de</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Mönchengladbach, Deutschland</span>
+                </div>
+                <div class="contact-item">
+                    <span>📅</span>
+                    <span>Geboren 2005</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>Verfügbar ab 2024</span>
+                </div>
+            </div>
         </div>
 
-        <div class="card-grid">
-            <div class="card">
-                <h3>Persönliche Daten</h3>
-                <p><strong>Name:</strong> Björn Wassen</p>
-                <p><strong>Wohnort:</strong> Mönchengladbach</p>
-                <p><strong>E-Mail:</strong> bjoern@wassen-mail.de</p>
-                <p><strong>Geburtsjahr:</strong> 2005</p>
-            </div>
-
-            <div class="card">
-                <h3>Kernkompetenzen</h3>
-                <ul style="color: var(--text-secondary); line-height: 2;">
-                    <li>Webentwicklung (HTML, CSS, JavaScript)</li>
-                    <li>Problemlösung und analytisches Denken</li>
-                    <li>Teamarbeit und Kommunikation</li>
-                    <li>Projektmanagement</li>
-                </ul>
-            </div>
+        <!-- Über mich -->
+        <div class="content-container cv-section">
+            <h2>Über mich</h2>
+            <p>Motivierter angehender Fachinformatiker mit Leidenschaft für Webentwicklung und moderne Technologien. Ich bringe kreative Problemlösungsansätze mit und strebe danach, innovative digitale Lösungen zu entwickeln. Meine Stärken liegen in der schnellen Auffassungsgabe, Teamarbeit und dem kontinuierlichen Lernen neuer Technologien.</p>
         </div>
 
-        <div class="content-container">
+        <!-- Berufserfahrung & Bildung -->
+        <div class="content-container cv-section">
             <h2>Werdegang</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Grundschule</h3>
-                    <p><strong>2010 - 2014</strong></p>
-                    <p>Grundschule Am Beispielort - Erste schulische Erfahrungen und Grundlagen des Lernens.</p>
+                    <h3>Grundschule Mönchengladbach</h3>
+                    <p><strong>2011 - 2015</strong></p>
+                    <p>Grundlegende Bildung mit ersten Erfahrungen in Mathematik, Deutsch und Naturwissenschaften. Entwicklung von Lernfähigkeiten und sozialen Kompetenzen.</p>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Weiterführende Schule</h3>
-                    <p><strong>2014 - 2020</strong></p>
-                    <p>Gymnasium/Realschule - Vertiefung der Kenntnisse, erste IT-Erfahrungen.</p>
+                    <h3>Realschule/Gymnasium Mönchengladbach</h3>
+                    <p><strong>2015 - 2021</strong></p>
+                    <p>Schwerpunkt auf Mathematik, Informatik und Naturwissenschaften. Erste Programmiererfahrungen in Java und Python. Abschluss mit gutem Notendurchschnitt.</p>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Ausbildung</h3>
-                    <p><strong>2020 - heute</strong></p>
-                    <p>IT-Ausbildung - Praktische Erfahrungen in der Softwareentwicklung und Systemadministration.</p>
+                    <h3>Ausbildung Fachinformatiker Anwendungsentwicklung</h3>
+                    <p><strong>2021 - 2024</strong></p>
+                    <p>Praktische Erfahrungen in der Softwareentwicklung, Webentwicklung (HTML, CSS, JavaScript), Datenbankdesign und Projektmanagement. Entwicklung verschiedener Anwendungen und Websites.</p>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Zukunftspläne</h3>
+                    <h3>Junior Entwickler (geplant)</h3>
                     <p><strong>ab 2024</strong></p>
-                    <p>Berufseinstieg als Fachinformatiker - Weiterentwicklung in der IT-Branche.</p>
+                    <p>Berufseinstieg als Junior Entwickler mit Fokus auf Webentwicklung und moderne Frameworks. Weiterbildung in Cloud-Technologien und agilen Entwicklungsmethoden.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Fähigkeiten -->
+        <div class="content-container cv-section">
+            <h2>Technische Fähigkeiten</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>HTML/CSS</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                    <small>Fortgeschritten</small>
+                </div>
+                <div class="skill-item">
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                    <small>Gut</small>
+                </div>
+                <div class="skill-item">
+                    <h4>Python</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%;"></div>
+                    </div>
+                    <small>Grundkenntnisse</small>
+                </div>
+                <div class="skill-item">
+                    <h4>Java</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 55%;"></div>
+                    </div>
+                    <small>Grundkenntnisse</small>
+                </div>
+                <div class="skill-item">
+                    <h4>Git/GitHub</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                    <small>Gut</small>
+                </div>
+                <div class="skill-item">
+                    <h4>Datenbanken (SQL)</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                    <small>Grundkenntnisse</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projekte -->
+        <div class="content-container cv-section">
+            <h2>Projekte & Erfahrungen</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Portfolio Website</h3>
+                    <p><strong>Technologien:</strong> HTML, CSS, JavaScript</p>
+                    <p>Entwicklung einer responsiven Portfolio-Website mit modernem Glasmorphismus-Design. Implementierung von animierten Elementen und optimierter Benutzerführung.</p>
+                </div>
+                <div class="card">
+                    <h3>Tabellen-Management Tool</h3>
+                    <p><strong>Technologien:</strong> HTML, CSS, JavaScript</p>
+                    <p>Interaktive Webanwendung zur Verwaltung und Darstellung von Tabellendaten mit Such- und Filterfunktionen.</p>
+                </div>
+                <div class="card">
+                    <h3>Schul-Management System</h3>
+                    <p><strong>Technologien:</strong> Java, SQL</p>
+                    <p>Entwicklung eines kleinen Systems zur Verwaltung von Schüler- und Kursdaten während der Ausbildung.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="content-container cv-section">
+            <h2>Persönliche Stärken</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🧠 Problemlösung</h3>
+                    <p>Analytisches Denken und kreative Lösungsansätze für komplexe technische Herausforderungen.</p>
+                </div>
+                <div class="card">
+                    <h3>👥 Teamarbeit</h3>
+                    <p>Effektive Zusammenarbeit in Entwicklerteams und agilen Arbeitsumgebungen.</p>
+                </div>
+                <div class="card">
+                    <h3>📚 Lernbereitschaft</h3>
+                    <p>Kontinuierliche Weiterbildung und schnelle Einarbeitung in neue Technologien.</p>
+                </div>
+                <div class="card">
+                    <h3>💬 Kommunikation</h3>
+                    <p>Klare Kommunikation technischer Sachverhalte an verschiedene Zielgruppen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprachen & Zertifikate -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>Sprachen</h3>
+                <ul style="color: var(--text-secondary); line-height: 2;">
+                    <li><strong>Deutsch:</strong> Muttersprache</li>
+                    <li><strong>Englisch:</strong> Fließend (B2-C1)</li>
+                    <li><strong>Französisch:</strong> Grundkenntnisse (A2)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Zertifikate & Kurse</h3>
+                <ul style="color: var(--text-secondary); line-height: 2;">
+                    <li>HTML/CSS Zertifikat</li>
+                    <li>JavaScript Grundlagen</li>
+                    <li>Git & GitHub Workshop</li>
+                    <li>Agile Entwicklung Grundlagen</li>
+                </ul>
             </div>
         </div>
     </main>
