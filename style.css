@@ -7,6 +7,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
     color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
@@ -16,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Animierter Gradient-Hintergrund */
+/* Dunkler animierter Gradient-Hintergrund */
 body::before {
     content: '';
     position: fixed;
@@ -24,9 +25,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #533a7b);
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
     z-index: -1;
 }
 
@@ -36,47 +37,49 @@ body::before {
     100% { background-position: 0% 50%; }
 }
 
-/* Global styles mit Glasmorphismus-Variablen */
+/* Dunkle Glasmorphismus-Variablen */
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    --glass-hover-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+    --glass-bg: rgba(30, 30, 30, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --glass-hover-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7);
     --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.8);
-    --accent-gradient: linear-gradient(45deg, #f093fb, #667eea);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --accent-gradient: linear-gradient(45deg, #667eea, #764ba2);
+    --accent-color: #667eea;
+    --hover-color: #764ba2;
+    --dark-surface: rgba(20, 20, 20, 0.9);
 }
 
 /* Glasmorphismus-Basis-Klasse */
 .glass-effect {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     transition: all 0.3s ease;
 }
 
 .glass-effect:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: var(--glass-hover-shadow);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(40, 40, 40, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Navigation mit Glaseffekt */
+/* Navigation mit dunklem Glaseffekt */
 nav {
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: var(--dark-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 1rem 0;
-    border: 1px solid var(--glass-border);
-    border-radius: 0 0 20px 20px;
+    border-bottom: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     position: sticky;
     top: 0;
     z-index: 100;
-    margin: 0 1rem;
 }
 
 nav ul {
@@ -84,113 +87,108 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-}
-
-nav li {
-    position: relative;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-primary);
     padding: 0.8rem 1.5rem;
-    border-radius: 15px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     display: block;
     font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav a:hover {
     background: var(--accent-gradient);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-nav a:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.5s;
-}
-
-nav a:hover:before {
-    left: 100%;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border-color: var(--accent-color);
 }
 
 .badge {
     background: var(--accent-gradient);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: white;
-    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Main Content mit Glaseffekt */
+/* Main Content */
 main {
     flex: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 1rem;
-    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
 }
 
 .content-container {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     padding: 3rem 2rem;
     margin: 2rem 0;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .content-container:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: var(--glass-hover-shadow);
+    background: rgba(40, 40, 40, 0.9);
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff, #f093fb, #667eea);
+    background: linear-gradient(135deg, #ffffff, var(--accent-color), var(--hover-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
-    text-shadow: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+    color: var(--accent-color);
+    font-weight: 500;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.8;
+    max-width: 800px;
+    margin: 1rem auto;
+    line-height: 1.7;
 }
 
 .welcome-image {
     display: block;
     margin: 0 auto 2rem auto;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: var(--glass-shadow);
     transition: all 0.3s ease;
     max-width: 100%;
@@ -199,31 +197,119 @@ p {
 }
 
 .welcome-image:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.02) translateY(-3px);
     box-shadow: var(--glass-hover-shadow);
 }
 
-/* Table styles mit Glaseffekt */
+/* Card Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glass-hover-shadow);
+    background: rgba(40, 40, 40, 0.9);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Timeline für Lebenslauf */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--accent-gradient);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 2rem 0;
+    padding: 2rem;
+    width: calc(50% - 2rem);
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.timeline-item:nth-child(even) {
+    left: calc(50% + 2rem);
+}
+
+.timeline-item:nth-child(odd) {
+    right: calc(50% + 2rem);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid #0a0a0a;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -2.5rem;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -2.5rem;
+}
+
+/* Table styles */
 table {
     border-collapse: separate;
     border-spacing: 0;
     margin: 20px auto;
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border-radius: 15px;
     border: 1px solid var(--glass-border);
     overflow: hidden;
     box-shadow: var(--glass-shadow);
+    width: 100%;
+    max-width: 800px;
 }
 
 th, td {
-    padding: 12px 18px;
-    border: none;
+    padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
 }
 
 th {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.2);
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -232,24 +318,29 @@ td {
     color: var(--text-secondary);
 }
 
-/* Button styles mit Glaseffekt */
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Button styles */
 button {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
     padding: 12px 24px;
-    border-radius: 50px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     color: var(--text-primary);
     font-weight: 600;
     cursor: pointer;
     box-shadow: var(--glass-shadow);
+    margin: 1rem 0;
 }
 
 button:hover {
     background: var(--accent-gradient);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 button a {
@@ -257,17 +348,16 @@ button a {
     text-decoration: none;
 }
 
-/* Footer mit Glaseffekt */
+/* Footer */
 footer {
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: var(--dark-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 2rem 1rem;
     text-align: center;
-    border: 1px solid var(--glass-border);
-    border-radius: 20px 20px 0 0;
-    margin: 0 1rem;
-    box-shadow: var(--glass-shadow);
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -8px 32px 0 rgba(0, 0, 0, 0.3);
+    margin-top: auto;
 }
 
 footer a {
@@ -275,18 +365,17 @@ footer a {
     text-decoration: none;
     margin: 0 1rem;
     padding: 0.8rem 1.5rem;
-    border-radius: 15px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     display: inline-block;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer a:hover {
     background: var(--accent-gradient);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 /* Responsive Design */
@@ -295,10 +384,6 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-    
-    nav a {
-        padding: 0.6rem 1.2rem;
     }
     
     h1 {
@@ -310,12 +395,24 @@ footer a:hover {
         margin: 1rem 0;
     }
     
-    nav {
-        margin: 0 0.5rem;
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    footer {
-        margin: 0 0.5rem;
+    .timeline::before {
+        left: 2rem;
+    }
+    
+    .timeline-item {
+        width: calc(100% - 4rem);
+        left: 3rem !important;
+        right: auto !important;
+    }
+    
+    .timeline-item::before {
+        left: -2.5rem !important;
+        right: auto !important;
     }
 }
 
@@ -331,13 +428,28 @@ footer a:hover {
     .content-container {
         padding: 1.5rem 1rem;
     }
+    
+    th, td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
 }
 
-/* Zusätzliche Glasmorphismus-Utility-Klassen */
+/* Utility-Klassen */
+.text-center {
+    text-align: center;
+}
+
+.text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border-radius: 15px;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
@@ -349,4 +461,5 @@ footer a:hover {
 .glass-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--glass-hover-shadow);
+    background: rgba(40, 40, 40, 0.9);
 }
