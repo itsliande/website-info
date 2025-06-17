@@ -142,7 +142,7 @@ nav a.active:hover {
 /* Main Content */
 main {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1400px; /* Erhöht von 1200px */
     margin: 0 auto;
     padding: 2rem 1rem;
     width: 100%;
@@ -156,15 +156,10 @@ main {
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     padding: 3rem 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto; /* auto hinzugefügt */
     transition: all 0.3s ease;
     text-align: center;
-}
-
-.content-container:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--glass-hover-shadow);
-    background: rgba(40, 40, 40, 0.9);
+    max-width: 1200px; /* Max-width hinzugefügt */
 }
 
 h1 {
@@ -248,8 +243,9 @@ p {
 /* Timeline für Lebenslauf */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px; /* Erhöht von 800px */
     margin: 2rem auto;
+    padding: 0 2rem; /* Padding hinzugefügt */
 }
 
 .timeline::before {
@@ -260,26 +256,31 @@ p {
     width: 2px;
     height: 100%;
     background: var(--accent-gradient);
+    z-index: 1; /* Z-index hinzugefügt */
 }
 
 .timeline-item {
     position: relative;
     margin: 2rem 0;
     padding: 2rem;
-    width: calc(50% - 2rem);
+    width: calc(50% - 3rem); /* Angepasst von calc(50% - 2rem) */
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
     border-radius: 15px;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
+    z-index: 2; /* Z-index hinzugefügt */
 }
 
 .timeline-item:nth-child(even) {
-    left: calc(50% + 2rem);
+    left: calc(50% + 3rem); /* Angepasst von calc(50% + 2rem) */
+    margin-left: 0;
 }
 
 .timeline-item:nth-child(odd) {
-    right: calc(50% + 2rem);
+    right: calc(50% + 3rem); /* Angepasst von calc(50% + 2rem) */
+    margin-right: 0;
+    left: auto;
 }
 
 .timeline-item::before {
@@ -291,14 +292,15 @@ p {
     background: var(--accent-color);
     border-radius: 50%;
     border: 3px solid #0a0a0a;
+    z-index: 3; /* Z-index hinzugefügt */
 }
 
 .timeline-item:nth-child(even)::before {
-    left: -2.5rem;
+    left: -3.5rem; /* Angepasst von -2.5rem */
 }
 
 .timeline-item:nth-child(odd)::before {
-    right: -2.5rem;
+    right: -3.5rem; /* Angepasst von -2.5rem */
 }
 
 /* Table styles */
@@ -393,6 +395,38 @@ footer a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .timeline {
+        max-width: 800px;
+        padding: 0 1rem;
+    }
+    
+    .timeline-item {
+        width: calc(50% - 2rem);
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: calc(50% + 2rem);
+    }
+    
+    .timeline-item:nth-child(odd) {
+        right: calc(50% + 2rem);
+    }
+    
+    .timeline-item::before {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-item:nth-child(even)::before {
+        left: -2.5rem;
+    }
+    
+    .timeline-item:nth-child(odd)::before {
+        right: -2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         padding: 0.5rem 0;
@@ -418,12 +452,17 @@ footer a:hover {
     
     .content-container {
         padding: 2rem 1rem;
-        margin: 1rem 0;
+        margin: 1rem auto;
+        max-width: 100%;
     }
     
     .card-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .timeline {
+        padding: 0;
     }
     
     .timeline::before {
@@ -434,6 +473,8 @@ footer a:hover {
         width: calc(100% - 4rem);
         left: 3rem !important;
         right: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
     
     .timeline-item::before {
