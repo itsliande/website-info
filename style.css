@@ -32,9 +32,9 @@ body::before {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
+    0% { background-position: 0 50%; }
     50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 0 50%; }
 }
 
 /* Dunkle Glasmorphismus-Variablen */
@@ -292,9 +292,10 @@ p {
 }
 
 .timeline-item:nth-child(odd) {
-    right: calc(50% + 1rem);
-    margin-right: 0;
-    left: auto;
+    /* Hier wird die zu starke Verschiebung nach links korrigiert */
+    left: 0;
+    margin-right: auto;
+    text-align: right;
 }
 
 .timeline-item::before {
@@ -424,7 +425,7 @@ footer a:hover {
     }
     
     .timeline-item:nth-child(odd) {
-        right: calc(50% + 1rem);
+        left: 0;
     }
     
     .timeline-item::before {
@@ -490,6 +491,7 @@ footer a:hover {
         right: auto !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        text-align: left !important;
     }
     
     .timeline-item::before {
@@ -605,4 +607,19 @@ footer a:hover {
     align-items: center;
     gap: 0.5rem;
     color: var(--text-secondary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #672a7d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #aa45ca;
 }
